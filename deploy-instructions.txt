@@ -1,0 +1,39 @@
+GITHUB PAGES DEPLOYMENT STEPS FOR YOUR PORTFOLIO
+
+Your repository: https://github.com/preranajangid/portfolio
+
+IMMEDIATE NEXT STEPS:
+
+1. GO TO YOUR REPOSITORY SETTINGS
+   - Visit: https://github.com/preranajangid/portfolio/settings
+
+2. ENABLE GITHUB PAGES
+   - Scroll down to "Pages" in the left sidebar
+   - Under "Source" select: "Deploy from a branch"
+   - Choose branch: "main" 
+   - Choose folder: "/ (root)"
+   - Click "Save"
+
+3. YOUR LIVE PORTFOLIO WILL BE AT:
+   https://preranajangid.github.io/portfolio/
+
+4. UPLOAD ALL FILES TO YOUR REPOSITORY
+   - Use the GitHub web interface
+   - Upload these files from your current project:
+     * index.html
+     * css/style.css  
+     * js/script.js
+     * assets/ folder (with profile-photo.jpg, resume.pdf)
+     * README.md
+     * CNAME
+     * .gitignore
+
+The portfolio will go live automatically once GitHub Pages is enabled and files are uploaded.
+It typically takes 5-10 minutes for the site to become available.
+
+Your portfolio includes:
+- Working contact forms
+- Live project links (RangrezDecor, Looker Studio dashboard)
+- Responsive design
+- Professional resume download
+- Social media integration

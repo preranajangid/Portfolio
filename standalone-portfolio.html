@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prerana Jangid - Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom CSS embedded */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: var(--transition);
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons .btn {
+            margin: 0.5rem;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            margin-right: 1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .profile-photo-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .profile-photo {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .project-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: white;
+            color: var(--primary-color);
+            border-radius: 50%;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-tech {
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0.2rem 0.3rem 0.2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Skills Section */
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 10px;
+            background: var(--bg-secondary);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 10px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-control {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            transition: var(--transition);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .contact-info {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card cite {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: relative;
+        }
+
+        #themeToggle {
+            width: 45px;
+            height: 45px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        #themeToggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Prerana Jangid</a>
+            
+            <!-- Dark/Light Mode Toggle -->
+            <div class="theme-toggle me-3">
+                <button class="btn btn-outline-light rounded-circle" id="themeToggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content animate-on-scroll">
+                        <h1 class="display-4 fw-bold mb-3">
+                            Hi, I'm <span class="text-warning">Prerana Jangid</span>
+                        </h1>
+                        <h2 class="h4 mb-4" id="typing-text">Computer Engineering Student & AI/ML Enthusiast</h2>
+                        <p class="lead mb-4">
+                            Final-year Computer Engineering student with a passion for solving real-world problems through technology. 
+                            Strong technical skills in Python, C, C++, SQL, Excel, and Data Visualization, bringing both academic knowledge and practical experience.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="https://www.linkedin.com/in/prerana-jangid-029131271/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/preranajangid" target="_blank" rel="noopener noreferrer" title="GitHub Profile"><i class="fab fa-github"></i></a>
+                            <a href="mailto:jangidprerana790@gmail.com?subject=Portfolio%20Contact&body=Hi%20Prerana,%0A%0AI%20would%20like%20to%20connect%20with%20you." title="Send Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#contact" title="Contact Form"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image animate-on-scroll">
+                        <div class="profile-photo-container">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bb?w=400&h=500&fit=crop&crop=face" 
+                                 alt="Prerana Jangid - Computer Engineering Student" 
+                                 class="profile-photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know more about my journey and passion</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop" 
+                             alt="Engineering Workspace" class="img-fluid rounded-3">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content animate-on-scroll">
+                        <h3 class="mb-4">Computer Engineering Student with a Vision for Innovation</h3>
+                        <p class="mb-4">
+                            I've completed impactful internships at Excelerate, where I worked on projects involving AI in project 
+                            management, data analysis, and automation. Beyond internships, I've also explored the world of freelancing, 
+                            successfully delivering projects such as responsive websites, machine learning-based applications, and custom software solutions for clients.
+                        </p>
+                        <p class="mb-4">
+                            My recent work includes a CNN-based pest detection system, a fingerprint-based blood group detection tool, 
+                            and a fully responsive event planner website. I enjoy blending creativity with logic, and I'm always eager 
+                            to take on new challenges, whether in data science, web development, or AI-powered solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <p class="section-subtitle">Technical skills and proficiency levels across different domains</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="skills-content animate-on-scroll">
+                        <h4 class="mb-4">Programming & Development</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Python</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>JavaScript & React.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>HTML5 & CSS3</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>C/C++</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="skills-content animate-on-scroll">
+                        <h4 class="mb-4">Data & Analytics</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>SQL & Database Management</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Data Visualization</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Microsoft Excel & Power Query</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Machine Learning</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A showcase of my work across different domains</p>
+                </div>
+            </div>
+
+            <!-- Machine Learning Projects -->
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center mb-4">
+                    <h3 class="project-category-title">
+                        <i class="fas fa-brain text-primary me-2"></i>Machine Learning Projects
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=300&fit=crop" 
+                                 alt="CNN Pest Detection" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/preranajangid/Precision-Agriculture-ML-and-DL-Techniques-for-pest-detection-" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://github.com/preranajangid/Precision-Agriculture-ML-and-DL-Techniques-for-pest-detection-" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>CNN Pest Detection System</h5>
+                            <p>Deep learning-based pest classification system using CNN model built in Keras with Tkinter GUI for agricultural pest detection and classification.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Keras</span>
+                                <span class="tech-tag">OpenCV</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=300&fit=crop" 
+                                 alt="Fingerprint Detection" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Fingerprint Blood Group Detection</h5>
+                            <p>Innovative biometric system that determines blood group from fingerprint patterns using advanced image processing and machine learning techniques.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Image Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Projects -->
+            <div class="row mb-5 mt-5">
+                <div class="col-lg-12 text-center mb-4">
+                    <h3 class="project-category-title">
+                        <i class="fas fa-code text-primary me-2"></i>Web Development Projects
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=300&fit=crop" 
+                                 alt="Furniture Website" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/preranajangid/Furniture-Website" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://github.com/preranajangid/Furniture-Website" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Furniture Website</h5>
+                            <p>Welcome to the Furniture Website — a stylish and responsive web project showcasing beautiful furniture pieces, designed for a smooth user experience. Built using HTML, CSS, and JavaScript.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop" 
+                                 alt="Rangrez Decor E-commerce Website" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://rangrezdecor.in" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://rangrezdecor.in" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>RangrezDecor Event Website</h5>
+                            <p>RangrezDecor is a dynamic and visually captivating event decoration website built for a premium brand offering balloon decor and event planning services. The project involved developing a responsive full-stack web application with seamless frontend–backend integration.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Full-Stack Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?w=500&h=300&fit=crop" 
+                                 alt="Quiz Web App" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/preranajangid/QuizApp" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://github.com/preranajangid/QuizApp" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Quiz Web App</h5>
+                            <p>Developed a fully functional, responsive quiz web app using React.js, enabling users to take quizzes across multiple categories with real-time interaction and score tracking. Features category-wise quiz selection, timed questions with instant feedback, and backend integration for dynamic question storage.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analytics Projects -->
+            <div class="row mb-5 mt-5">
+                <div class="col-lg-12 text-center mb-4">
+                    <h3 class="project-category-title">
+                        <i class="fas fa-chart-line text-primary me-2"></i>Data Analytics & Visualization
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop" 
+                                 alt="Student Engagement Dashboard" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://lookerstudio.google.com/u/0/reporting/6fa44c32-8944-4ef2-aa26-d2ca1de84257" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://lookerstudio.google.com/u/0/reporting/6fa44c32-8944-4ef2-aa26-d2ca1de84257" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Student Engagement Dashboard</h5>
+                            <p>Transforming raw student data into actionable insights through data analysis and visualization tools. Project included data integration, cleaning, sorting, checking data types and inconsistencies, finding missing values, analysis, and creating interactive dashboard in Google Looker Studio.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Microsoft Excel</span>
+                                <span class="tech-tag">Google Looker Studio</span>
+                                <span class="tech-tag">Data Visualization</span>
+                                <span class="tech-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop" 
+                                 alt="AtliQ Hardware Sales & Finance Analytics" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://www.linkedin.com/posts/prerana-jangid-029131271_sales-and-finance-project-using-excel-activity-7245768540648050688-ylr1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJnleEB6LfX0kht7rdHdG2tCBOTTYLfJAc" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/posts/prerana-jangid-029131271_sales-and-finance-project-using-excel-activity-7245768540648050688-ylr1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJnleEB6LfX0kht7rdHdG2tCBOTTYLfJAc" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>AtliQ Hardware Sales & Finance Analytics</h5>
+                            <p>Analyzed over half a million sales records for AtliQ Hardware to boost sales and improve profit margins. Conducted thorough ETL processes, crafted detailed P&L reports, generated customer net sales reports, and compared market performance to targets using data model relationships and DAX calculations.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Microsoft Excel</span>
+                                <span class="tech-tag">Power Query</span>
+                                <span class="tech-tag">ETL</span>
+                                <span class="tech-tag">Finance Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&h=300&fit=crop" 
+                                 alt="Process Automation Scripts" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-python"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Process Automation Scripts</h5>
+                            <p>Python-based automation solutions for streamlining business processes and improving operational efficiency.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Automation</span>
+                                <span class="tech-tag">Process Optimization</span>
+                                <span class="tech-tag">Scripting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Resume</h2>
+                    <p class="section-subtitle">Download my complete resume or view my experience timeline</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="resume-section animate-on-scroll">
+                        <div class="text-center mb-5">
+                            <a href="https://drive.google.com/file/d/1wcGso5ZfNsSytfanRgvMQVbwGXD61EpT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                                <i class="fas fa-external-link-alt me-2"></i>View Resume
+                            </a>
+                        </div>
+                        
+                        <!-- Testimonials -->
+                        <div class="testimonials mt-5">
+                            <h4 class="text-center mb-4">Client Testimonials</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="testimonial-card">
+                                        <p>"Prerana delivered exceptional work on our data visualization project. Her technical skills and attention to detail are impressive."</p>
+                                        <cite>- Excelerate Team Lead</cite>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="testimonial-card">
+                                        <p>"Outstanding work on our event decoration website! Prerana created a beautiful, responsive site that perfectly captures our brand. The full-stack development with React and Flask was seamless."</p>
+                                        <cite>- RangrezDecor Client</cite>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="testimonial-card">
+                                        <p>"Professional, reliable, and technically sound. Prerana helped us implement an ML solution that exceeded our expectations."</p>
+                                        <cite>- Freelance Client</cite>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's discuss your next project or collaboration opportunity</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form animate-on-scroll">
+                        <form id="contactForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">
+                                        Please provide your name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" class="form-control" id="subject" required>
+                                <div class="invalid-feedback">
+                                    Please provide a subject.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please provide a message.
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg me-3">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                                <button type="button" class="btn btn-outline-primary btn-lg" onclick="copyEmailToClipboard()">
+                                    <i class="fas fa-copy me-2"></i>Copy Email
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info animate-on-scroll">
+                        <a href="mailto:jangidprerana790@gmail.com?subject=Portfolio%20Contact&body=Hi%20Prerana,%0A%0AI%20would%20like%20to%20connect%20with%20you." class="text-decoration-none">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <h5>Email</h5>
+                            <p>jangidprerana790@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info animate-on-scroll">
+                        <a href="https://www.linkedin.com/in/prerana-jangid-029131271/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <i class="fab fa-linkedin contact-icon"></i>
+                            <h5>LinkedIn</h5>
+                            <p>Connect with me professionally</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info animate-on-scroll">
+                        <a href="https://github.com/preranajangid" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <i class="fab fa-github contact-icon"></i>
+                            <h5>GitHub</h5>
+                            <p>Check out my code repositories</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2025 Prerana Jangid. All rights reserved.</p>
+            <div class="social-links mt-3">
+                <a href="https://www.linkedin.com/in/prerana-jangid-029131271/" target="_blank" rel="noopener noreferrer" class="social-link me-3"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/preranajangid" target="_blank" rel="noopener noreferrer" class="social-link me-3"><i class="fab fa-github"></i></a>
+                <a href="mailto:jangidprerana790@gmail.com?subject=Portfolio%20Contact&body=Hi%20Prerana,%0A%0AI%20would%20like%20to%20connect%20with%20you." class="social-link me-3"><i class="fas fa-envelope"></i></a>
+                <a href="#contact" class="social-link"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript embedded -->
+    <script>
+        // Portfolio JavaScript functionality
+        console.log(`
+    ╔══════════════════════════════════════╗
+    ║          Prerana Jangid              ║
+    ║     Computer Engineering Student     ║
+    ║         & AI/ML Enthusiast          ║
+    ║                                      ║
+    ║  Thanks for checking out my code!    ║
+    ║  Let's connect and build something   ║
+    ║         amazing together!            ║
+    ╚══════════════════════════════════════╝
+        `);
+
+        // DOM Content Loaded Event
+        document.addEventListener('DOMContentLoaded', function() {
+            initThemeToggle();
+            initSmoothScrolling();
+            initNavbarEffects();
+            initScrollAnimations();
+            initContactForm();
+            initTypingEffect();
+        });
+
+        // Theme Toggle Functionality
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            if (!themeToggle || !themeIcon) return;
+            
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            // Set initial theme
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            updateThemeIcon(currentTheme);
+            
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+                
+                // Add animation effect
+                themeToggle.style.transform = 'rotate(360deg)';
+                setTimeout(() => {
+                    themeToggle.style.transform = 'rotate(0deg)';
+                }, 300);
+            });
+        }
+
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('themeIcon');
+            if (!themeIcon) return;
+            
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        // Smooth Scrolling
+        function initSmoothScrolling() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update active nav link
+                        updateActiveNavLink(targetId);
+                    }
+                });
+            });
+        }
+
+        // Navbar Effects
+        function initNavbarEffects() {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+            
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Update active nav link based on scroll position
+                updateActiveNavLinkOnScroll();
+            });
+        }
+
+        function updateActiveNavLinkOnScroll() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = '#' + section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    updateActiveNavLink(sectionId);
+                }
+            });
+        }
+
+        function updateActiveNavLink(targetId) {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === targetId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Scroll Animations
+        function initScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Contact Form
+        function initContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            if (!contactForm) return;
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (!submitBtn) return;
+            
+            const originalBtnText = submitBtn.innerHTML;
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (!contactForm.checkValidity()) {
+                    e.stopPropagation();
+                    contactForm.classList.add('was-validated');
+                    return;
+                }
+                
+                // Simulate form submission
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+                submitBtn.disabled = true;
+                
+                // Collect form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // Create mailto link with form data
+                const mailtoLink = `mailto:jangidprerana790@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Provide user feedback
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-envelope me-2"></i>Email Client Opened';
+                    submitBtn.classList.remove('btn-primary');
+                    submitBtn.classList.add('btn-success');
+                    
+                    showNotification('Email client should open shortly. If not, please copy: jangidprerana790@gmail.com', 'success');
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('btn-success');
+                        submitBtn.classList.add('btn-primary');
+                    }, 4000);
+                    
+                }, 500);
+            });
+        }
+
+        // Copy email to clipboard
+        function copyEmailToClipboard() {
+            const email = 'jangidprerana790@gmail.com';
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email).then(() => {
+                    showNotification('Email address copied to clipboard!', 'success');
+                }).catch(() => {
+                    fallbackCopyTextToClipboard(email);
+                });
+            } else {
+                fallbackCopyTextToClipboard(email);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showNotification('Email address copied to clipboard!', 'success');
+            } catch (err) {
+                showNotification('Unable to copy email address. Please copy manually: ' + text, 'warning');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info'} position-fixed`;
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'} me-2"></i>
+                ${message}
+                <button type="button" class="btn-close float-end" onclick="this.parentElement.remove()"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // Typing Effect
+        function initTypingEffect() {
+            const typingElement = document.getElementById('typing-text');
+            if (!typingElement) return;
+            
+            const texts = [
+                'Computer Engineering Student & AI/ML Enthusiast',
+                'Full-Stack Web Developer',
+                'Data Analytics Specialist',
+                'Machine Learning Engineer'
+            ];
+            
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            
+            function typeEffect() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    typingElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                let typeSpeed = 100;
+                
+                if (isDeleting) {
+                    typeSpeed /= 2;
+                }
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    typeSpeed = 500;
+                }
+                
+                setTimeout(typeEffect, typeSpeed);
+            }
+            
+            typeEffect();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prerana Jangid - Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Prerana Jangid</a>
+            
+            <!-- Dark/Light Mode Toggle -->
+            <div class="theme-toggle me-3">
+                <button class="btn btn-outline-light rounded-circle" id="themeToggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content animate-on-scroll">
+                        <h1 class="display-4 fw-bold mb-3">
+                            Hi, I'm <span class="text-primary">Prerana Jangid</span>
+                        </h1>
+                        <h2 class="h4 text-muted mb-4" id="typing-text">Computer Engineer & AI/ML Enthusiast</h2>
+                        <p class="lead mb-4">
+                            Computer Engineer with a passion for solving real-world problems through technology. 
+                            Strong technical skills in Python, C, C++, SQL, Excel, and Data Visualization, bringing both academic knowledge and practical experience.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-primary btn-lg">Get In Touch</a>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="https://www.linkedin.com/in/prerana-jangid-029131271/" target="_blank" rel="noopener noreferrer" class="social-link me-3" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/preranajangid" target="_blank" rel="noopener noreferrer" class="social-link me-3" title="GitHub Profile"><i class="fab fa-github"></i></a>
+                            <a href="mailto:jangidprerana790@gmail.com?subject=Portfolio%20Contact&body=Hi%20Prerana,%0A%0AI%20would%20like%20to%20connect%20with%20you." class="social-link me-3" title="Send Email" onclick="handleEmailClick(event, 'jangidprerana790@gmail.com')"><i class="fas fa-envelope"></i></a>
+                            <a href="#contact" class="social-link" title="Contact Form"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image animate-on-scroll">
+                        <div class="profile-photo-container">
+                            <img src="assets/profile-photo.jpg" 
+                                 alt="Prerana Jangid - Computer Engineer" 
+                                 class="profile-photo"
+                                 onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b5bb?w=400&h=500&fit=crop&crop=face'">
+                            <div class="profile-overlay">
+                                <div class="profile-badge">
+                                    <i class="fas fa-code"></i>
+                                    <span>Computer Engineer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know more about my journey and passion</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop" 
+                             alt="Engineering Workspace" class="img-fluid rounded-3">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content animate-on-scroll">
+                        <h3 class="mb-4">Computer Engineer with a Vision for Innovation</h3>
+                        <p class="mb-4">
+                            I've completed impactful internships at Excelerate, where I worked on projects involving AI in project 
+                            management, data analysis, and automation. Beyond internships, I've also explored the world of freelancing, 
+                            successfully delivering projects such as responsive websites, machine learning-based applications, and custom software solutions for clients.
+                        </p>
+                        <p class="mb-4">
+                            My recent work includes a CNN-based pest detection system, a fingerprint-based blood group detection tool, 
+                            and a fully responsive event planner website. I enjoy blending creativity with logic, and I'm always eager 
+                            to take on new challenges, whether in data science, web development, or AI-powered solutions.
+                        </p>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="about-item mb-3">
+                                    <i class="fas fa-graduation-cap text-primary me-2"></i>
+                                    <strong>Education:</strong> Computer Engineering Graduate
+                                </div>
+                                <div class="about-item mb-3">
+                                    <i class="fas fa-briefcase text-primary me-2"></i>
+                                    <strong>Experience:</strong> Excelerate Intern & Freelancer
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="about-item mb-3">
+                                    <i class="fas fa-code text-primary me-2"></i>
+                                    <strong>Specialization:</strong> AI/ML & Data Science
+                                </div>
+                                <div class="about-item mb-3">
+                                    <i class="fas fa-laptop text-primary me-2"></i>
+                                    <strong>Status:</strong> Seeking Dynamic Opportunities
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <p class="section-subtitle">Technologies and tools I work with</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skill-category animate-on-scroll">
+                        <h4 class="mb-4"><i class="fas fa-code text-primary me-2"></i>Programming Languages</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Python</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>C++</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>C</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill-category animate-on-scroll">
+                        <h4 class="mb-4"><i class="fas fa-database text-primary me-2"></i>Data & Analytics</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>SQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Excel</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Data Visualization</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="tech-stack animate-on-scroll">
+                        <h4 class="text-center mb-4">Technologies & Tools</h4>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                                <div class="tech-item">
+                                    <i class="fab fa-python tech-icon"></i>
+                                    <p class="mt-2 mb-0">Python</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                                <div class="tech-item">
+                                    <i class="fas fa-brain tech-icon"></i>
+                                    <p class="mt-2 mb-0">AI/ML</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                                <div class="tech-item">
+                                    <i class="fas fa-database tech-icon"></i>
+                                    <p class="mt-2 mb-0">SQL</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                                <div class="tech-item">
+                                    <i class="fab fa-html5 tech-icon"></i>
+                                    <p class="mt-2 mb-0">HTML5</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                                <div class="tech-item">
+                                    <i class="fab fa-css3-alt tech-icon"></i>
+                                    <p class="mt-2 mb-0">CSS3</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-6 text-center mb-4">
+                                <div class="tech-item">
+                                    <i class="fab fa-js-square tech-icon"></i>
+                                    <p class="mt-2 mb-0">JavaScript</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Project Portfolio</h2>
+                    <p class="section-subtitle">Comprehensive showcase of my technical expertise across different domains</p>
+                </div>
+            </div>
+
+            <!-- AI/ML Projects -->
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center mb-4">
+                    <h3 class="project-category-title">
+                        <i class="fas fa-brain text-primary me-2"></i>Artificial Intelligence & Machine Learning
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=300&fit=crop" 
+                                 alt="CNN Pest Detection Project" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://github.com/preranajangid/Precision-Agriculture-ML-and-DL-Techniques-for-pest-detection-" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>CNN Pest Detection System</h5>
+                            <p>Deep learning-based pest classification system built using a Convolutional Neural Network (CNN) model in Keras. Detects and classifies agricultural pests from images with a Tkinter-based GUI. Features confidence threshold detection - reports "Unknown" for untrained pest images.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Keras</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Tkinter</span>
+                                <span class="tech-tag">MediaPipe</span>
+                                <span class="tech-tag">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&h=300&fit=crop" 
+                                 alt="Fingerprint Blood Group Detection" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Fingerprint Blood Group Detection</h5>
+                            <p>Innovative biometric system determining blood group from fingerprint patterns using machine learning and image processing.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Image Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=500&h=300&fit=crop" 
+                                 alt="AI Project Management System" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>AI in Project Management</h5>
+                            <p>Developed during Excelerate internship - AI-powered system for intelligent project planning and resource optimization.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">AI</span>
+                                <span class="tech-tag">Data Analysis</span>
+                                <span class="tech-tag">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Projects -->
+            <div class="row mb-5 mt-5">
+                <div class="col-lg-12 text-center mb-4">
+                    <h3 class="project-category-title">
+                        <i class="fas fa-code text-primary me-2"></i>Web Development Projects
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=300&fit=crop" 
+                                 alt="Furniture Website" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/preranajangid/Furniture-Website" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://github.com/preranajangid/Furniture-Website" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Furniture Website</h5>
+                            <p>Welcome to the Furniture Website — a stylish and responsive web project showcasing beautiful furniture pieces, designed for a smooth user experience. Built using HTML, CSS, and JavaScript.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop" 
+                                 alt="Rangrez Decor E-commerce Website" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://rangrezdecor.in" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://rangrezdecor.in" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>RangrezDecor Event Website</h5>
+                            <p>RangrezDecor is a dynamic and visually captivating event decoration website built for a premium brand offering balloon decor and event planning services. The project involved developing a responsive full-stack web application with seamless frontend–backend integration.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Full-Stack Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?w=500&h=300&fit=crop" 
+                                 alt="Quiz Web App" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/preranajangid/QuizApp" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://github.com/preranajangid/QuizApp" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Quiz Web App</h5>
+                            <p>Developed a fully functional, responsive quiz web app using React.js, enabling users to take quizzes across multiple categories with real-time interaction and score tracking. Features category-wise quiz selection, timed questions with instant feedback, and backend integration for dynamic question storage.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analytics Projects -->
+            <div class="row mb-5 mt-5">
+                <div class="col-lg-12 text-center mb-4">
+                    <h3 class="project-category-title">
+                        <i class="fas fa-chart-line text-primary me-2"></i>Data Analytics & Visualization
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop" 
+                                 alt="Student Engagement Dashboard" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://lookerstudio.google.com/u/0/reporting/6fa44c32-8944-4ef2-aa26-d2ca1de84257" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://lookerstudio.google.com/u/0/reporting/6fa44c32-8944-4ef2-aa26-d2ca1de84257" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Student Engagement Dashboard</h5>
+                            <p>Transforming raw student data into actionable insights through data analysis and visualization tools. Project included data integration, cleaning, sorting, checking data types and inconsistencies, finding missing values, analysis, and creating interactive dashboard in Google Looker Studio.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Microsoft Excel</span>
+                                <span class="tech-tag">Google Looker Studio</span>
+                                <span class="tech-tag">Data Visualization</span>
+                                <span class="tech-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop" 
+                                 alt="AtliQ Hardware Sales & Finance Analytics" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://www.linkedin.com/posts/prerana-jangid-029131271_sales-and-finance-project-using-excel-activity-7245768540648050688-ylr1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJnleEB6LfX0kht7rdHdG2tCBOTTYLfJAc" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/posts/prerana-jangid-029131271_sales-and-finance-project-using-excel-activity-7245768540648050688-ylr1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEJnleEB6LfX0kht7rdHdG2tCBOTTYLfJAc" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>AtliQ Hardware Sales & Finance Analytics</h5>
+                            <p>Analyzed over half a million sales records for AtliQ Hardware to boost sales and improve profit margins. Conducted thorough ETL processes, crafted detailed P&L reports, generated customer net sales reports, and compared market performance to targets using data model relationships and DAX calculations.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Microsoft Excel</span>
+                                <span class="tech-tag">Power Query</span>
+                                <span class="tech-tag">ETL</span>
+                                <span class="tech-tag">Finance Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&h=300&fit=crop" 
+                                 alt="Process Automation Scripts" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-python"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h5>Process Automation Scripts</h5>
+                            <p>Python-based automation solutions for streamlining business processes and improving operational efficiency.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Automation</span>
+                                <span class="tech-tag">Process Optimization</span>
+                                <span class="tech-tag">Scripting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Resume</h2>
+                    <p class="section-subtitle">Download my complete resume or view my experience timeline</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="resume-section animate-on-scroll">
+                        <div class="text-center mb-5">
+                            <a href="https://drive.google.com/file/d/1wcGso5ZfNsSytfanRgvMQVbwGXD61EpT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                                <i class="fas fa-external-link-alt me-2"></i>View Resume
+                            </a>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Computer Engineer</h5>
+                                    <p class="text-muted">Current</p>
+                                    <p>Graduated with strong foundation in Python, C, C++, SQL, Excel, and Data Visualization. Actively seeking opportunities to apply skills in dynamic, growth-focused environments.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Intern - Excelerate</h5>
+                                    <p class="text-muted">2023</p>
+                                    <p>Worked on impactful projects involving AI in project management, data analysis, and automation. Developed technical solutions and gained valuable industry experience in business analytics.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h5>Freelance Developer</h5>
+                                    <p class="text-muted">2022 - Present</p>
+                                    <p>Successfully delivering responsive websites, machine learning-based applications, and custom software solutions for clients. Building expertise in end-to-end project development and client management.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonials -->
+                        <div class="testimonials mt-5">
+                            <h4 class="text-center mb-4">Client Testimonials</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="testimonial-card">
+                                        <p>"Prerana delivered exceptional work on our data visualization project. Her technical skills and attention to detail are impressive."</p>
+                                        <cite>- Excelerate Team Lead</cite>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="testimonial-card">
+                                        <p>"Outstanding work on our event decoration website! Prerana created a beautiful, responsive site that perfectly captures our brand. The full-stack development with React and Flask was seamless."</p>
+                                        <cite>- RangrezDecor Client</cite>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="testimonial-card">
+                                        <p>"Professional, reliable, and technically sound. Prerana helped us implement an ML solution that exceeded our expectations."</p>
+                                        <cite>- Freelance Client</cite>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's discuss your next project or collaboration opportunity</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form animate-on-scroll">
+                        <form id="contactForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">
+                                        Please provide your name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" class="form-control" id="subject" required>
+                                <div class="invalid-feedback">
+                                    Please provide a subject.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please provide a message.
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg me-3">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                                <button type="button" class="btn btn-outline-primary btn-lg" onclick="copyEmailToClipboard()">
+                                    <i class="fas fa-copy me-2"></i>Copy Email
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info animate-on-scroll">
+                        <a href="mailto:jangidprerana790@gmail.com?subject=Portfolio%20Contact&body=Hi%20Prerana,%0A%0AI%20would%20like%20to%20connect%20with%20you." class="text-decoration-none" onclick="handleEmailClick(event, 'jangidprerana790@gmail.com')">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <h5>Email</h5>
+                            <p>jangidprerana790@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info animate-on-scroll">
+                        <a href="https://www.linkedin.com/in/prerana-jangid-029131271/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <i class="fab fa-linkedin contact-icon"></i>
+                            <h5>LinkedIn</h5>
+                            <p>Connect with me professionally</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="contact-info animate-on-scroll">
+                        <a href="https://github.com/preranajangid" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <i class="fab fa-github contact-icon"></i>
+                            <h5>GitHub</h5>
+                            <p>Check out my code repositories</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2025 Prerana Jangid. All rights reserved.</p>
+            <div class="social-links mt-3">
+                <a href="https://www.linkedin.com/in/prerana-jangid-029131271/" target="_blank" rel="noopener noreferrer" class="social-link me-3"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/preranajangid" target="_blank" rel="noopener noreferrer" class="social-link me-3"><i class="fab fa-github"></i></a>
+                <a href="mailto:jangidprerana790@gmail.com?subject=Portfolio%20Contact&body=Hi%20Prerana,%0A%0AI%20would%20like%20to%20connect%20with%20you." class="social-link me-3" onclick="handleEmailClick(event, 'jangidprerana790@gmail.com')"><i class="fas fa-envelope"></i></a>
+                <a href="#contact" class="social-link"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <!-- Project 1 Modal -->
+    <div class="modal fade" id="project1Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">CNN Pest Detection System</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=300&fit=crop" 
+                         alt="CNN Pest Detection" class="img-fluid mb-3">
+                    <p>This deep learning-based pest classification system uses a Convolutional Neural Network (CNN) model built in Keras. It helps detect and classify agricultural pests from images with a Tkinter-based GUI for user interaction. When the model encounters unknown or untrained pest images, it reports the result as "Unknown" based on confidence thresholding.</p>
+                    <h6>🌟 Key Features:</h6>
+                    <ul>
+                        <li>Pest classification using trained CNN (pest.h5)</li>
+                        <li>Tkinter-based graphical user interface (GUI)</li>
+                        <li>Confidence thresholding to reject unknown images</li>
+                        <li>Simple image upload and display with bounding box annotation</li>
+                        <li>Detects common agricultural pests: Aphids, Armyworm, Beetle, Bollworm, Grasshopper, Mites, Mosquito, Sawfly, Stem Borer</li>
+                        <li>GUI features: Image upload, Model testing, Grayscale conversion, Object detection with bounding boxes</li>
+                        <li>Displays causes and prevention suggestions for each detected pest</li>
+                        <li>Rejects random/unrelated images as Unknown when confidence is low</li>
+                    </ul>
+                    <h6>📦 Technologies & Requirements:</h6>
+                    <p>Python, TensorFlow, Keras, NumPy, OpenCV, Pillow, Matplotlib, scikit-learn, tkvideo, MediaPipe, gTTS, Pandas, Flask, MLxtend</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/preranajangid/Precision-Agriculture-ML-and-DL-Techniques-for-pest-detection-" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2 Modal -->
+    <div class="modal fade" id="project2Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Fingerprint Blood Group Detection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://pixabay.com/get/g8ce50cff35edb6f129e3e0ce5eff547ebe4bfad62fa07a4d9913b6df098ffe488eb0230c84c2d26cea6b026bdbba4eb76645e330cb86f71a421f35a52a4c8d6a_1280.jpg" 
+                         alt="Fingerprint Detection" class="img-fluid mb-3">
+                    <p>An innovative biometric system that determines blood group from fingerprint patterns using advanced image processing and machine learning techniques. This system could revolutionize medical diagnostics and emergency response.</p>
+                    <h6>Key Features:</h6>
+                    <ul>
+                        <li>Non-invasive blood group detection</li>
+                        <li>Advanced pattern recognition algorithms</li>
+                        <li>High-resolution fingerprint analysis</li>
+                        <li>Secure data handling and privacy protection</li>
+                    </ul>
+                    <h6>Technologies Used:</h6>
+                    <p>Python, OpenCV, scikit-learn, NumPy, Machine Learning algorithms</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary">View on GitHub</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3 Modal -->
+    <div class="modal fade" id="project3Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Smart Event Planner</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://pixabay.com/get/g12becb8d2fcf2d088b3510e59f56bd5628a8f8f091dbd85610bf6bf30c18a9dfb6a9eca81926dc7dc7fdd54e24b0c0f47c4c2e85447cafd47b1aedc73e0bc784_1280.jpg" 
+                         alt="Event Planner" class="img-fluid mb-3">
+                    <p>A comprehensive web application for event planning and management featuring real-time collaboration, automated scheduling, and integrated communication tools. Perfect for both personal and professional event management.</p>
+                    <h6>Key Features:</h6>
+                    <ul>
+                        <li>Real-time collaboration tools</li>
+                        <li>Automated scheduling and reminders</li>
+                        <li>Budget tracking and management</li>
+                        <li>Vendor management system</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                    <h6>Technologies Used:</h6>
+                    <p>HTML5, CSS3, JavaScript, SQL, PHP, Bootstrap</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary">View on GitHub</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
